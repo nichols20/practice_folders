@@ -25,9 +25,19 @@ function Circle(radius, color){
 
 extend(Circle, Shape)
 
+Circle.prototype.duplicate = function(){
+    Shape.prototype.duplicate.call(this) /* if you wish to still call the first
+    implementation of the parent prototype you can do so by using the call method */
+
+    console.log('duplicate circle')
+}/* used the method override method to change the duplicate function for the circle
+constructor after the circle constructor had inherited the initial properties of
+the shape constructor function */
+
 Circle.prototype.draw = function(){
     console.log('draw')
 }
+
 function Square(size, color){
     this.size = size
 
