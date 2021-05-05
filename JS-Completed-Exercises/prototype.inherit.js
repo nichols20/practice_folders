@@ -46,6 +46,29 @@ function Square(size, color){
 
 extend(Square, Shape)
 
+/* duplicated circle.prototype.duplicate for square object */
+
+Square.prototype.duplicate = function(){
+    Shape.prototype.duplicate.call(this) 
+    console.log('duplicate Square')
+}
+
+
+const shapes = [
+    new Circle,
+    new Square
+]
+
+/* added this for of loop for an example of polymorphism, what this did
+was allow me to call multiple different forms of the shape object
+and call each objects duplicate function by morhphing it into one line
+of code. Instead of having to wrtie multiple individual if statements
+depending on the type of shape.*/
+for (let shape of shapes){
+    shape.duplicate();
+}
+
+
 const s = new Shape
 
 const c = new Circle(1, 'red')
