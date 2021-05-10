@@ -82,3 +82,32 @@ for constructor functions and if i wish to reassign the prototype of a construct
 function I must do it before defining the object containing said function */
 
 
+class Shape {
+    constructor(color){
+        this.color = color
+    }
+
+    move(){
+        console.log('move')
+    }
+}
+
+class Circle extends Shape{
+    constructor(color){
+        super(color)
+    }
+    draw(){
+        console.log('draw')
+    }
+}
+
+const c = new Circle
+
+/* The extend keyword allows me to make a class inheirit the properties of another 
+and implement the parent properties in the childs prototype without requiring me to
+explicitly change the prototype then reset the constructor. ** if I create a constructor
+in the parent class and create another constructor in the child class. I must first define
+the parent constructors properties before I can continue this is accomplished by using the
+keyword super than attributing the property value of the super constructor */
+
+
