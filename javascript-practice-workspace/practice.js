@@ -11,13 +11,21 @@ class Calculator {
         this.seven = document.getElementById('7')
         this.eight = document.getElementById('8')
         this.nine = document.getElementById('9')
-        this.zero = document.getElementById('10')
+        this.zero = document.getElementById('0')
+        this.plus = '+'
+        this.assignedNumbers = []
     }
 
     selectedOne(){
+        const input = document.getElementById('value')
+        const apply = document.createTextNode(this.one.textContent)
+        input.append(apply)
         console.log(this.one.textContent)
     }
     selectedTwo(){
+        const input = document.getElementById('value')
+        const apply = document.createTextNode(this.two.textContent)
+        input.append(apply)
         console.log(this.two.textContent)
     }
     selectedThree(){
@@ -43,6 +51,16 @@ class Calculator {
     }
     selectedZero(){
         console.log(this.zero.textContent)
+    }
+    selectedPlus(){
+        const input = document.getElementById('value')
+        this.assignedNumbers.push(input.textContent)
+        console.log(this.assignedNumbers)
+        console.log(input.textContent)
+        input.textContent = ''
+        if (this.assignedNumbers.length > 1){
+            console.log(this.assignedNumbers)
+        }
     }
 }
 
