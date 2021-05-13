@@ -9,13 +9,20 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="list-container">
-      <h1 id="h">To do for today</h1>
-      <form id="form" action="" onsubmit="return false">
-        <input id="input" type="text" name="input" value="">
-        <button onclick="toDoList.listToDo();"></button>
-      </form>
-      <div id="list"></div>
+    <div id="calculator-container">
+      <div id="value-container">
+        <p id="value">1</p>
+      </div>
+      <button id="number" onclick="calculator.calculate()">1</button>
+      <button id="number" onclick="calculator.selected()">2</button>
+      <button class="3" onclick="calculator.selectedThree()">3</button>
+      <button class="4" onclick="calculator.selected()">4</button>
+      <button class="5" onclick="calculator.selected()">5</button>
+      <button class="6" onclick="calculator.selected()">6</button>
+      <button class="7" onclick="calculator.selected()">7</button>
+      <button class="8" onclick="calculator.selected()">8</button>
+      <button class="9" onclick="calculator.selected()">9</button>
+      <button class="0" onclick="calculator.selected()">10</button>
     </div>
     <script src="./practice.js">
       
