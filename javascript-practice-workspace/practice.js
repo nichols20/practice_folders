@@ -54,13 +54,16 @@ class Calculator {
     }
     selectedPlus(){
         const input = document.getElementById('value')
-        this.assignedNumbers.push(input.textContent)
-        console.log(this.assignedNumbers)
-        console.log(input.textContent)
+        let trueNumber = parseFloat(input.textContent)
+        this.assignedNumbers.push(trueNumber)
         input.textContent = ''
+
+        /* Added this if statement that will reduce all items in the array to return one single sum*/
         if (this.assignedNumbers.length > 1){
-            console.log(this.assignedNumbers)
+            const value = this.assignedNumbers.reduce((a,b) => a + b)
+            console.log(value)
         }
+        
     }
 }
 
