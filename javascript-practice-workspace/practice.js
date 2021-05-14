@@ -16,6 +16,9 @@ class Calculator {
         this.assignedNumbers = []
     }
 
+    /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
+    ///I'd like to find a way to simplify this function so I don't have to make one for each number on a calculator*/
+
     selectedOne(){
         const input = document.getElementById('value')
         const apply = document.createTextNode(this.one.textContent)
@@ -54,6 +57,7 @@ class Calculator {
     }
     selectedPlus(){
         const input = document.getElementById('value')
+        /* the let object parses the input value the user inputs from a string to array*/
         let trueNumber = parseFloat(input.textContent)
         this.assignedNumbers.push(trueNumber)
         input.textContent = ''
@@ -68,3 +72,4 @@ class Calculator {
 }
 
 const calculator = new Calculator
+
