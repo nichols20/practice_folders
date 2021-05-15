@@ -14,9 +14,10 @@ class Calculator {
         this.zero = document.getElementById('0')
         this.plus = '+'
         this.assignedNumbers = []
-        this.input = document.getElementById('value') /* defined this.input to prevent
-        me from duplicating this code multiple times in other functions I can now just
-        call this object */
+        /* defined this.input to prevent me from duplicating this code 
+        multiple times in other functions I can now just call this object */
+        this.input = document.getElementById('value')
+        this.clear = document.getElementById('clear')
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
@@ -72,15 +73,36 @@ class Calculator {
         this.input.append(apply)
         console.log(this.zero.textContent)
     }
+
+    selectedClear(){
+        /* created this clear method to erase the values imputed by the user starting 
+        back at 0 or an empty input array. To accomplish this I spliced the 
+        this.assignedNumbers array starting from the first index all the way to the 
+        entire length of the called array*/
+        this.assignedNumbers.splice(0, this.assignedNumbers.length)
+    
+
+        /* I had to add this if statement in the clear method on top of the plus method
+        so that the button appears the way it should when there's no values in the array,
+        I need to find away to make this if statement global throughout the entire code
+        so I don't have to retype it multiple times*/
+        if (this.assignedNumbers.length > 0){
+            this.clear.textContent = 'C'
+        }
+        else{
+            this.clear.textContent = 'AC'
+        }
+
+    }
+
     selectedPlus(){
-        /* the let object parses the input value the user inputs from a string to array*/
         if(this.input.textContent == ''){
-            console.log('empty string')
-            return console.log('nope')
+            return
         }
 
 
         if(this.assignedNumbers.length >= 0){
+            /* the let object parses the input value the user inputs from a string to array*/
             let trueNumber = parseFloat(this.input.textContent)
             this.assignedNumbers.push(trueNumber)
         }
@@ -90,8 +112,16 @@ class Calculator {
             console.log(value)
         }
 
+        if (this.assignedNumbers.length > 0){
+            this.clear.textContent = 'C'
+        }
+        else{
+            this.clear.textContent = 'AC'
+        }
+
         this.input.textContent = ''
     }
+
 }
 
 const calculator = new Calculator
