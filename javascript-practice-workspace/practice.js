@@ -11,27 +11,16 @@ solve this issue was apply a counter so that whenever minus was clicked it'd add
 that would then tell whatever number was selected to change over to a negative*/
 class Calculator {
     constructor(){
-        this.one = document.getElementById('1')
-        this.two = document.getElementById('2')
-        this.three = document.getElementById('3')
-        this.four = document.getElementById('4')
-        this.five = document.getElementById('5')
-        this.six = document.getElementById('6')
-        this.seven = document.getElementById('7')
-        this.eight = document.getElementById('8')
-        this.nine = document.getElementById('9')
-        this.zero = document.getElementById('0')
-        this.value = 0
-        this.assignedNumbers = []
-        this.minusClicked = 0
         /* defined this.input to prevent me from duplicating this code 
         multiple times in other functions I can now just call this object */
         this.input = document.getElementById('value')
         this.clear = document.getElementById('clear')
         this.input.textContent = '0'
+        this.value = 0
         this.click = 0
         this.dotClick = 0
         this.percentClick = 0
+        this.minusClicked = 0
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
