@@ -30,6 +30,8 @@ class Calculator {
         this.clear = document.getElementById('clear')
         this.input.textContent = '0'
         this.click = 0
+        this.dotClick = 0
+        this.percentClick = 0
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
@@ -161,6 +163,26 @@ class Calculator {
         this.input.append(apply)
     }
 
+    selectedDot(){
+        if(this.dotClick > 0){
+            return
+        }
+        let apply = '.'
+        this.input.append(apply)
+        this.dotClick ++
+    }
+
+    selectedPercent(){
+        let trueNumber = parseFloat(this.input.textContent)
+        trueNumber = trueNumber / 100;
+        trueNumber = this.value * trueNumber
+        this.input.textContent = trueNumber
+        this.value += trueNumber
+
+        console.log(this.value)
+        this.percentClick++ 
+    }
+
     selectedClear(){
         this.value = 0
         this.input.textContent = '0'
@@ -177,23 +199,31 @@ class Calculator {
         }
 
         this.click = 0;
+        this.dotClick = 0
 
     }
 
     selectedEquals(){
-        if (this.assignedNumbers.length >= 0){
-            let trueNumber = parseFloat(this.input.textContent)
-
-            this.assignedNumbers.push(trueNumber)
-
-            this.value += this.assignedNumbers[0]
-            this.assignedNumbers.splice(0, this.assignedNumbers.length)
+        if(this.percentClick > 0){
+            this.input.textContent = this.value
+            console.log(this.value)
+            this.value = 0
+            this.click = 0;
+            this.dotClick = 0;
+            this.percentClick = 0;
+            return
         }
+
+        let trueNumber = parseFloat(this.input.textContent)
+        this.value += trueNumber
         this.input.textContent = this.value
         console.log(this.value)
+        
+        
         this.value = 0
-
         this.click = 0;
+        this.dotClick = 0;
+        this.percentClick = 0;
     }
 
     selectedMinus(){
@@ -201,18 +231,10 @@ class Calculator {
         if(this.input.textContent == ''){
             return
         }        
-        
-        if (this.assignedNumbers.length >= 0){
             let trueNumber = parseFloat(this.input.textContent)
-
-            this.assignedNumbers.push(trueNumber)
-
-            this.value += this.assignedNumbers[0]
+            this.value += trueNumber;
             console.log(this.value)
-            this.assignedNumbers.splice(0, this.assignedNumbers.length)
-        }
         
-
         if (this.input.textContent !== ''){
             this.clear.textContent = 'C'
         }
@@ -221,25 +243,17 @@ class Calculator {
         }
         this.minusClicked++
         this.click = 0;
-
+        this.dotClick = 0;
     }
 
     selectedPlus(){
         if(this.input.textContent == ''){
             return
         }
-
-        if (this.assignedNumbers.length >= 0){
             /* the let object parses the input value the user inputs from a string to array*/
             let trueNumber = parseFloat(this.input.textContent)
-            this.assignedNumbers.push(trueNumber)
-           
-            this.value += this.assignedNumbers[0]
+            this.value += trueNumber
             console.log(this.value)
-
-            this.assignedNumbers.splice(0, this.assignedNumbers.length)
-        
-        }
 
         if (this.input.textContent !== ''){
             this.clear.textContent = 'C'
@@ -249,6 +263,7 @@ class Calculator {
         }
 
         this.click = 0;
+        this.dotClick = 0;
 
     }
 
