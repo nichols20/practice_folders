@@ -29,6 +29,7 @@ class Calculator {
         this.input = document.getElementById('value')
         this.clear = document.getElementById('clear')
         this.input.textContent = '0'
+        this.click = 0
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
@@ -39,103 +40,143 @@ class Calculator {
     selectedOne(){
         if (this.minusClicked > 0){
             this.input.textContent = '-1'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent= '1';
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 1
+        this.input.append(apply)
+        this.click++
     }
     selectedTwo(){
         if (this.minusClicked > 0){
             this.input.textContent = '-2'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '2'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 2
+        this.input.append(apply)
+        this.click++
     }
     selectedThree(){
         if (this.minusClicked > 0){
-            this.input.textcontent = '-3'
+            this.input.textContent = '-3'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '3'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 3
+        this.input.append(apply)
+        this.click++
     }
     selectedFour(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-4'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '4'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 4
+        this.input.append(apply)
+        this.click++
     }
     selectedFive(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-5'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '5'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 5
+        this.input.append(apply)
+        this.click++
     }
     selectedSix(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-6'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '6'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 6
+        this.input.append(apply)
+        this.click++
     }
     selectedSeven(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-7'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '7'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 7
+        this.input.append(apply)
+        this.click++
     }
     selectedEight(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-8'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '8'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 8
+        this.input.append(apply)
+        this.click++
     }
     selectedNine(){
         if (this.minusClicked > 0){
-
             this.input.textContent = '-9'
+            this.click++
             this.minusClicked = 0;
             return
         }
-        this.input.textContent = '9'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 9
+        this.input.append(apply)
+        this.click++
     }
     selectedZero(){
-        this.input.textContent = '0'
+        if(this.click === 0)this.input.textContent= ''
+
+        let apply = 0
+        this.input.append(apply)
     }
 
     selectedClear(){
-        /* created this clear method to erase the values imputed by the user starting 
-        back at 0 or an empty input array. To accomplish this I spliced the 
-        this.assignedNumbers array starting from the first index all the way to the 
-        entire length of the called array*/
-        this.assignedNumbers.splice(0, this.assignedNumbers.length)
-    
+        this.value = 0
+        this.input.textContent = '0'
 
         /* I had to add this if statement in the clear method on top of the plus method
         so that the button appears the way it should when there's no values in the array,
         I need to find away to make this if statement global throughout the entire code
         so I don't have to retype it multiple times*/
-        if (this.assignedNumbers.length > 0){
+        if (this.input.textContent !== '0'){
             this.clear.textContent = 'C'
         }
         else{
             this.clear.textContent = 'AC'
         }
+
+        this.click = 0;
 
     }
 
@@ -151,6 +192,8 @@ class Calculator {
         this.input.textContent = this.value
         console.log(this.value)
         this.value = 0
+
+        this.click = 0;
     }
 
     selectedMinus(){
@@ -170,13 +213,14 @@ class Calculator {
         }
         
 
-        if (this.assignedNumbers.length > 0){
+        if (this.input.textContent !== ''){
             this.clear.textContent = 'C'
         }
         else{
             this.clear.textContent = 'AC'
         }
         this.minusClicked++
+        this.click = 0;
 
     }
 
@@ -197,12 +241,14 @@ class Calculator {
         
         }
 
-        if (this.assignedNumbers.length > 0){
+        if (this.input.textContent !== ''){
             this.clear.textContent = 'C'
         }
         else{
             this.clear.textContent = 'AC'
         }
+
+        this.click = 0;
 
     }
 
