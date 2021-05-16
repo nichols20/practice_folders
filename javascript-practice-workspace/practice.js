@@ -171,6 +171,13 @@ class Calculator {
          this.input.textContent = trueNumber
          return
         }
+
+        if(this.divisionClick > 0){
+         let trueNumber = parseFloat(this.input.textContent)
+         trueNumber = trueNumber / 100;
+         this.input.textContent = trueNumber
+         return
+        }
         let trueNumber = parseFloat(this.input.textContent)
         trueNumber = trueNumber / 100;
         trueNumber = this.value * trueNumber
@@ -214,6 +221,17 @@ class Calculator {
 
         if(this.multiplyClick > 0){
             this.value = this.value * this.input.textContent
+            console.log(this.value)
+            this.input.textContent = this.value
+            this.value = 0;
+            this.click = 0;
+            this.dotClick = 0;
+            this.multiplyClick = 0;
+            return
+        }
+
+        if(this.divisionClick > 0){
+            this.value = this.value / this.input.textContent
             console.log(this.value)
             this.input.textContent = this.value
             this.value = 0;
@@ -293,8 +311,34 @@ class Calculator {
 
         this.click = 0;
         this.dotClick = 0;
+    }
 
+    selectedDivision(){
+        if(this.multiplyClick > 0){
+         let trueNumber = parseFloat(this.input.textContent)
+         this.value = this.value * trueNumber
+         this.divisionClick++
+         this.click = 0;
+         this.dotClick = 0;
+         this.multiplyClick = 0;
+         return
+        }
+        let trueNumber = parseFloat(this.input.textContent)
+        this.value += trueNumber
 
+        console.log(this.value)
+
+        if (this.input.textContent !== ''){
+            this.clear.textContent = 'C'
+        }
+        else{
+            this.clear.textContent = 'AC'
+        }
+
+        this.divisionClick++ 
+
+        this.click = 0;
+        this.dotClick = 0;
     }
 
 }
