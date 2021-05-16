@@ -13,24 +13,69 @@
       <div id="value-container">
         <p id="value"></p>
       </div>
-      <button id="clear" onclick="calculator.selectedClear()">AC</button>
-      <button onclick="calculator.selectedOne()">1</button>
-      <button onclick="calculator.selectedTwo()">2</button>
-      <button onclick="calculator.selectedThree()">3</button>
-      <button onclick="calculator.selectedFour()">4</button>
-      <button onclick="calculator.selectedFive()">5</button>
-      <button onclick="calculator.selectedSix()">6</button>
-      <button onclick="calculator.selectedSeven()">7</button>
-      <button onclick="calculator.selectedEight()">8</button>
-      <button onclick="calculator.selectedNine()">9</button>
-      <button onclick="calculator.selectedZero()">0</button>
-      <button onclick="calculator.selectedPlus()">+</button>
-      <button onclick="calculator.selectedMinus()">-</button>
-      <button onclick="calculator.selectedEquals()">=</button>
-      <button onclick="calculator.selectedDot()">.</button>
-      <button onclick="calculator.selectedPercent()">%</button>
-      <button onclick="calculator.selectedMultiply()">x</button>
-      <button onclick="calculator.selectedDivision()">/</button>
+      <div class="buttonContainer">
+        <button id="one" onclick="calculator.selectedOne()">1</button>
+        <button id="two" onclick="calculator.selectedTwo()">2</button>
+        <button id="three" onclick="calculator.selectedThree()">3</button>
+        <button id="four" onclick="calculator.selectedFour()">4</button>
+        <button id="five" onclick="calculator.selectedFive()">5</button>
+        <button id="six" onclick="calculator.selectedSix()">6</button>
+        <button id="seven" onclick="calculator.selectedSeven()">7</button>
+        <button id="eight" onclick="calculator.selectedEight()">8</button>
+        <button id="nine" onclick="calculator.selectedNine()">9</button>
+        <button id="zero" onclick="calculator.selectedZero()">0</button>
+        <button
+          id="clear"
+          class="specialBtn"
+          onclick="calculator.selectedClear()"
+        >
+          AC
+        </button>
+        <button id="decimal" onclick="calculator.selectedDot()">.</button>
+        <button
+          id="percent"
+          class="specialBtn"
+          onclick="calculator.selectedPercent()"
+        >
+          %
+        </button>
+        <button id="negative" class="specialBtn">+/-</button>
+        <button
+          id="plus"
+          class="calculatorOperations"
+          onclick="calculator.selectedPlus()"
+        >
+          +
+        </button>
+        <button
+          id="minus"
+          class="calculatorOperations"
+          onclick="calculator.selectedMinus()"
+        >
+          -
+        </button>
+        <button
+          id="equals"
+          class="calculatorOperations"
+          onclick="calculator.selectedEquals()"
+        >
+          =
+        </button>
+        <button
+          id="times"
+          class="calculatorOperations"
+          onclick="calculator.selectedMultiply()"
+        >
+          x
+        </button>
+        <button
+          id="divide"
+          class="calculatorOperations"
+          onclick="calculator.selectedDivision()"
+        >
+          /
+        </button>
+      </div>
     </div>
     <script src="./practice.js"></script>
   </body>
