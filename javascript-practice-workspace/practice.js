@@ -13,14 +13,17 @@ class Calculator {
     constructor(){
         /* defined this.input to prevent me from duplicating this code 
         multiple times in other functions I can now just call this object */
-        this.input = document.getElementById('value')
-        this.clear = document.getElementById('clear')
-        this.input.textContent = '0'
-        this.value = 0
-        this.click = 0
-        this.dotClick = 0
-        this.percentClick = 0
-        this.minusClicked = 0
+        this.input = document.getElementById('value');
+        this.clear = document.getElementById('clear');
+        this.input.textContent = '0';
+        this.value = 0;
+        this.click = 0;
+        this.dotClick = 0;
+        this.minusClick = 0;
+        this.percentClick = 0;
+        this.multiplyClick = 0;
+        this.divisionClick = 0;
+
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
@@ -162,6 +165,12 @@ class Calculator {
     }
 
     selectedPercent(){
+        if(this.multiplyClick > 0){
+         let trueNumber = parseFloat(this.input.textContent)
+         trueNumber = trueNumber / 100;
+         this.input.textContent = trueNumber
+         return
+        }
         let trueNumber = parseFloat(this.input.textContent)
         trueNumber = trueNumber / 100;
         trueNumber = this.value * trueNumber
@@ -200,6 +209,17 @@ class Calculator {
             this.click = 0;
             this.dotClick = 0;
             this.percentClick = 0;
+            return
+        }
+
+        if(this.multiplyClick > 0){
+            this.value = this.value * this.input.textContent
+            console.log(this.value)
+            this.input.textContent = this.value
+            this.value = 0;
+            this.click = 0;
+            this.dotClick = 0;
+            this.multiplyClick = 0;
             return
         }
 
@@ -253,6 +273,27 @@ class Calculator {
 
         this.click = 0;
         this.dotClick = 0;
+
+    }
+
+    selectedMultiply(){
+        let trueNumber = parseFloat(this.input.textContent)
+        this.value += trueNumber
+
+        console.log(this.value)
+
+        if (this.input.textContent !== ''){
+            this.clear.textContent = 'C'
+        }
+        else{
+            this.clear.textContent = 'AC'
+        }
+
+        this.multiplyClick++ 
+
+        this.click = 0;
+        this.dotClick = 0;
+
 
     }
 
