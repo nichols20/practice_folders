@@ -28,6 +28,7 @@ class Calculator {
         multiple times in other functions I can now just call this object */
         this.input = document.getElementById('value')
         this.clear = document.getElementById('clear')
+        this.input.textContent = '0'
     }
 
     /*Majority of these functions below opperate for the individual button inputs to apply to the overall number 1,2,3...
@@ -37,98 +38,84 @@ class Calculator {
 
     selectedOne(){
         if (this.minusClicked > 0){
-            let apply = -1
-            this.input.append(apply)
+            this.input.textContent = '-1'
             this.minusClicked = 0;
             return
         }
-        let apply = 1;
-        this.input.append(apply)
+        this.input.textContent= '1';
     }
     selectedTwo(){
         if (this.minusClicked > 0){
-            let apply = -2
-            this.input.append(apply)
+            this.input.textContent = '-2'
             this.minusClicked = 0;
             return
         }
-        let apply = 2;
-        this.input.append(apply)
+        this.input.textContent = '2'
     }
     selectedThree(){
         if (this.minusClicked > 0){
-            let apply = -3
-            this.input.append(apply)
+            this.input.textcontent = '-3'
             this.minusClicked = 0;
             return
         }
-        let apply = 3;
-        this.input.append(apply)
+        this.input.textContent = '3'
     }
     selectedFour(){
         if (this.minusClicked > 0){
-            let apply = -4
-            this.input.append(apply)
+
+            this.input.textContent = '-4'
             this.minusClicked = 0;
             return
         }
-        let apply = 4;
-        this.input.append(apply)
+        this.input.textContent = '4'
     }
     selectedFive(){
         if (this.minusClicked > 0){
-            let apply = -5
-            this.input.append(apply)
+
+            this.input.textContent = '-5'
             this.minusClicked = 0;
             return
         }
-        let apply = 5;
-        this.input.append(apply)
+        this.input.textContent = '5'
     }
     selectedSix(){
         if (this.minusClicked > 0){
-            let apply = -6
-            this.input.append(apply)
+
+            this.input.textContent = '-6'
             this.minusClicked = 0;
             return
         }
-        let apply = 6;
-        this.input.append(apply)
+        this.input.textContent = '6'
     }
     selectedSeven(){
         if (this.minusClicked > 0){
-            let apply = -7
-            this.input.append(apply)
+
+            this.input.textContent = '-7'
             this.minusClicked = 0;
             return
         }
-        let apply = 7;
-        this.input.append(apply)
+        this.input.textContent = '7'
     }
     selectedEight(){
         if (this.minusClicked > 0){
-            let apply = -8
-            this.input.append(apply)
+
+            this.input.textContent = '-8'
             this.minusClicked = 0;
             return
         }
-        let apply = 8;
-        this.input.append(apply)
+        this.input.textContent = '8'
     }
     selectedNine(){
         if (this.minusClicked > 0){
-            let apply = -9
-            this.input.append(apply)
+
+            this.input.textContent = '-9'
             this.minusClicked = 0;
             return
         }
-        let apply = 9;
-        this.input.append(apply)
+        this.input.textContent = '9'
     }
     selectedZero(){
-        let apply = 0;
-        this.input.append(apply)
-        console.log(this.zero.textContent)
+        this.input.textContent = '0'
     }
 
     selectedClear(){
@@ -161,18 +148,16 @@ class Calculator {
             this.value += this.assignedNumbers[0]
             this.assignedNumbers.splice(0, this.assignedNumbers.length)
         }
+        this.input.textContent = this.value
         console.log(this.value)
         this.value = 0
-        this.input.textContent = ''
     }
 
     selectedMinus(){
 
-       
         if(this.input.textContent == ''){
             return
-        }
-
+        }        
         
         if (this.assignedNumbers.length >= 0){
             let trueNumber = parseFloat(this.input.textContent)
@@ -193,7 +178,6 @@ class Calculator {
         }
         this.minusClicked++
 
-        this.input.textContent = ''
     }
 
     selectedPlus(){
@@ -220,7 +204,6 @@ class Calculator {
             this.clear.textContent = 'AC'
         }
 
-        this.input.textContent = ''
     }
 
 }
