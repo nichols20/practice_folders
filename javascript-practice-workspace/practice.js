@@ -19,7 +19,7 @@ class Calculator {
         this.value = 0;
         this.click = 0;
         this.dotClick = 0;
-        this.minusClick = 0;
+        this.minusClicked = 0;
         this.percentClick = 0;
         this.multiplyClick = 0;
         this.divisionClick = 0;
@@ -178,6 +178,7 @@ class Calculator {
          this.input.textContent = trueNumber
          return
         }
+
         let trueNumber = parseFloat(this.input.textContent)
         trueNumber = trueNumber / 100;
         trueNumber = this.value * trueNumber
@@ -258,9 +259,10 @@ class Calculator {
         if(this.input.textContent == ''){
             return
         }        
-            let trueNumber = parseFloat(this.input.textContent)
-            this.value += trueNumber;
-            console.log(this.value)
+            
+        let trueNumber = parseFloat(this.input.textContent)
+        this.value += trueNumber;
+        console.log(this.value)
         
         if (this.input.textContent !== ''){
             this.clear.textContent = 'C'
@@ -268,6 +270,7 @@ class Calculator {
         else{
             this.clear.textContent = 'AC'
         }
+
         this.minusClicked++
         this.click = 0;
         this.dotClick = 0;
