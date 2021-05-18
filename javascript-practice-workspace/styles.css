@@ -1,0 +1,18 @@
+body {
+  font-size: 62.5%;
+}
+
+#noteContainer {
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+}
+
+#inputNote {
+  width: 60%;
+}
+
+#submitNote {
+  width: 60px;
+}
