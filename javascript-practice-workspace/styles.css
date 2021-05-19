@@ -79,6 +79,7 @@ body {
   top: 0px;
   display: none;
   z-index: 1;
+  justify-content: center;
 }
 
 #scopedNote {
@@ -91,6 +92,24 @@ body {
   font-size: 1.5rem;
   float: left;
   overflow: hidden;
+}
+
+#scopedNote > h4 {
+  text-align: left;
+  margin: 10px 0;
+  width: 100px;
+  padding-left: 20px;
+}
+
+#deleteNote2 {
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  margin-right: 10px;
+  position: relative;
+  top: -50px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #inputNote {

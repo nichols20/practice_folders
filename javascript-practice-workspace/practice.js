@@ -3,7 +3,7 @@ class NoteApp{
     constructor(){
         this.noteContainer = document.getElementById('noteContainer')
         this.newNote = document.getElementById('inputNote')
-        this.modal = document.getElementById('modal')
+
     }
 
     submitClicked(){
@@ -11,6 +11,8 @@ class NoteApp{
 
         let noteHeader = document.createElement('h4')
         noteHeader.textContent ='New Note'
+        let noteHeader2 = document.createElement('h4')
+        noteHeader2.textContent = 'New Note'
 
         let deleteNote = document.createElement('button')
         deleteNote.textContent = 'x'
@@ -18,25 +20,32 @@ class NoteApp{
         deleteNote.onclick = function(){
             savedNote.remove()
         }
+        let deleteNote2 = document.createElement('button')
+        deleteNote2.textContent = 'x'
+        deleteNote2.id = 'deleteNote2'
+        deleteNote2.onclick = function(){
+            modal.style.display = 'none'
+        }
+
+        let noteDetails = document.createElement('p')
+        noteDetails.textContent = this.newNote.value
+        
+
+        let scopedNote = document.createElement('div')
+        scopedNote.id = 'scopedNote'
+        scopedNote.append(noteHeader2, deleteNote2)
 
         let viewDetails = document.createElement('button')
         viewDetails.textContent = 'View Details'
         viewDetails.id = 'viewDetails'
         /*working progress */
         viewDetails.onclick = function(){
-            modal.style.display = 'block'
-            let noteheader2 = noteHeader
-            let deleteNote2 = deleteNote
+            modal.style.display = 'flex' 
     
-            let scopedNote = document.createElement('div')
-            scopedNote.id = 'scopedNote'
-            scopedNote.append(noteheader2, deleteNote2, noteDetails2)
             modal.append(scopedNote)
             
         }
         /*///////////////////////////////////////////////////////////////////////*/
-        let noteDetails = document.createElement('p')
-        noteDetails.textContent = this.newNote.value
 
         let savedNote = document.createElement('div')
         savedNote.id = 'savedNote'
