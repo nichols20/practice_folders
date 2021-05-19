@@ -4,8 +4,44 @@ body {
   margin: 0;
 }
 
+#inputNote {
+  width: 60%;
+}
+
+#submitNote {
+  width: 60px;
+}
+
+#submitNote {
+  background-color: darkcyan;
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+}
+
+#submitNote:hover {
+  color: white;
+}
+
+/*Overall div containing all note elements */
+#noteContainer {
+  width: 700px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  display: block;
+  float: none;
+}
+
+#noteHeading {
+  font-size: 2rem;
+  color: darkcyan;
+}
+
+/*first note displayed when input is submitted */
 #savedNote {
-  background-color: rgb(170, 101, 101);
+  background-color: rgb(214, 214, 214);
   width: 300px;
   height: 140px;
   margin-top: 3rem;
@@ -36,12 +72,16 @@ body {
 
 #viewDetails {
   height: 30px;
-  background-color: blue;
-  color: white;
+  background-color: darkcyan;
+  color: rgb(7, 7, 7);
   border: none;
   border-radius: 5px;
   float: right;
   margin-right: 10px;
+}
+
+#viewDetails:hover {
+  color: white;
 }
 
 #deleteNote {
@@ -58,16 +98,6 @@ body {
 
 #savedNote:hover #deleteNote {
   display: block;
-}
-
-#noteContainer {
-  width: 700px;
-  height: 500px;
-  margin: auto;
-  text-align: center;
-  background-color: white;
-  display: block;
-  float: none;
 }
 
 /* note copy styles for when user selects view details */
@@ -120,12 +150,4 @@ body {
   position: relative;
   top: -50px;
   background-color: rgba(0, 0, 0, 0);
-}
-
-#inputNote {
-  width: 60%;
-}
-
-#submitNote {
-  width: 60px;
 }
