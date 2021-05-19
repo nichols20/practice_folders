@@ -19,21 +19,25 @@ class NoteApp{
         deleteNote.id = 'deleteNote'
         deleteNote.onclick = function(){
             savedNote.remove()
+            scopedNote.remove()
         }
         let deleteNote2 = document.createElement('button')
         deleteNote2.textContent = 'x'
         deleteNote2.id = 'deleteNote2'
         deleteNote2.onclick = function(){
             modal.style.display = 'none'
+            modal.removeChild(scopedNote)
         }
 
         let noteDetails = document.createElement('p')
         noteDetails.textContent = this.newNote.value
+        let noteDetails2 = document.createElement('p')
+        noteDetails2.textContent = this.newNote.value
         
 
         let scopedNote = document.createElement('div')
         scopedNote.id = 'scopedNote'
-        scopedNote.append(noteHeader2, deleteNote2)
+        scopedNote.append(noteHeader2, deleteNote2, noteDetails2)
 
         let viewDetails = document.createElement('button')
         viewDetails.textContent = 'View Details'

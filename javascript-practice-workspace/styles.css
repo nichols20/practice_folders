@@ -70,6 +70,7 @@ body {
   float: none;
 }
 
+/* note copy styles for when user selects view details */
 #modal {
   width: 100%;
   height: 100%;
@@ -84,14 +85,13 @@ body {
 
 #scopedNote {
   background-color: rgb(170, 101, 101);
-  width: 300px;
-  height: 140px;
+  width: 600px;
+  height: fit-content;
   margin-top: 3rem;
   margin-right: 2rem;
   margin-left: 1rem;
   font-size: 1.5rem;
   float: left;
-  overflow: hidden;
 }
 
 #scopedNote > h4 {
@@ -99,6 +99,16 @@ body {
   margin: 10px 0;
   width: 100px;
   padding-left: 20px;
+}
+
+#scopedNote > p {
+  height: fit-content;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-top: 0.5rem;
+  text-align: left;
+  word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 #deleteNote2 {
