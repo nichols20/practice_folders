@@ -1,0 +1,23 @@
+#memoryGame {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  grid-template-areas:
+    "first second third"
+    "fourth fifth sixth";
+}
+
+#memoryTile1 {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  grid-area: first;
+  opacity: 1;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  grid-area: first;
+}
