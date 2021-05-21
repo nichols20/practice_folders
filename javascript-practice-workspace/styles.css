@@ -10,14 +10,11 @@
 #memoryTile1 {
   width: 200px;
   height: 200px;
-  background-color: green;
+  background-color: rgba(116, 59, 59, 1);
   grid-area: first;
   opacity: 1;
 }
 
 img {
-  width: 200px;
-  height: 200px;
-  z-index: -1;
-  grid-area: first;
+  opacity: 0;
 }
