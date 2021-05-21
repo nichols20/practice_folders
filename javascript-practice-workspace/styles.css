@@ -15,6 +15,14 @@
   opacity: 1;
 }
 
+#memoryTile2 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(116, 59, 59, 1);
+  grid-area: second;
+  opacity: 1;
+}
+
 img {
   opacity: 0;
 }
