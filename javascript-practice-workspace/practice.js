@@ -18,21 +18,21 @@ class Memory {
     tile1Clicked(){
         this.tile.style.backgroundColor = 'rgba(0, 0, 0, 0)'
         this.tilePic.style.opacity = '1'
-        console.log(this.source)
+
         this.match.push(this.source)
-        console.log(this.match)
+
         this.clickAmount++
-        console.log(this.clickAmount)
+        if (this.clickAmount === 2){
+            this.checkMatch()
+        }
     }
     tile2Clicked(){
         this.tile2.style.backgroundColor = 'rgba(0, 0, 0, 0)'
         this.tilePic2.style.opacity = '1'
-        console.log(this.source2)
-        this.match.push(this.source2)
-        console.log(this.match)
-        this.clickAmount++
-        console.log(this.clickAmount)
 
+        this.match.push(this.source2)
+    
+        this.clickAmount++
         if (this.clickAmount === 2){
             this.checkMatch()
         }
