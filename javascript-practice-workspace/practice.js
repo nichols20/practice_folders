@@ -10,33 +10,37 @@ class Memory {
         this.match = []
         this.clickAmount = 0 /*once two clicks have occured the program will analyze whether the two images are the same*/
 
-        this.checkMatch = function(){
-            if(this.match[0] === this.match[1])console.log('goodjob')
-        }        
-    }
+        this.tile1Clicked = function(){
+            /*reveals card selected */
+            this.tile.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+            this.tilePic.style.opacity = '1'
+            
+            /*pushes source of image selected to empty array */
+            this.match.push(this.source)
 
-    tile1Clicked(){
-        this.tile.style.backgroundColor = 'rgba(0, 0, 0, 0)'
-        this.tilePic.style.opacity = '1'
-
-        this.match.push(this.source)
-
-        this.clickAmount++
-        if (this.clickAmount === 2){
+            /*increments click amount +1 then checks if if statement in checkMatch() is true */
+            this.clickAmount++
             this.checkMatch()
         }
-    }
-    tile2Clicked(){
-        this.tile2.style.backgroundColor = 'rgba(0, 0, 0, 0)'
-        this.tilePic2.style.opacity = '1'
-
-        this.match.push(this.source2)
+        this.tile2Clicked = function(){
+            this.tile2.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+            this.tilePic2.style.opacity = '1'
     
-        this.clickAmount++
-        if (this.clickAmount === 2){
+            this.match.push(this.source2)
+
+            this.clickAmount++
             this.checkMatch()
         }
     }
+
+    checkMatch(){
+      console.log('yes')
+      if(this.clickAmount === 2){
+        if(this.match[0] === this.match[1]){
+            window.alert('nice job!')
+        }
+      }
+    }        
 
 }
 
