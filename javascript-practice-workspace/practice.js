@@ -15,6 +15,10 @@ class Memory {
         this.source4 = document.getElementById('tile4Pic').src
         this.match = []
         this.clickAmount = 0 /*once two clicks have occured the program will analyze whether the two images are the same*/
+        this.countCorrect = 0         
+        this.text = document.createElement('p')         
+        this.text.textContent = `Score: ${this.countCorrect}`        
+        document.body.append(this.text)
 
         this.tile1Clicked = function(){
             /*reveals card selected */
@@ -63,6 +67,8 @@ class Memory {
         if(this.match[0] === this.match[1]){
             window.alert('nice job!')
             this.clickAmount = 0;
+            this.countCorrect++
+            this.text.textContent = `Score: ${this.countCorrect}`
         }
         else if(this.match[0] !== this.match[1]){
             this.clickAmount = 0;
