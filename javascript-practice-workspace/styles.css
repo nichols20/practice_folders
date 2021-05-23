@@ -40,4 +40,10 @@
 
 img {
   opacity: 0;
+  width: 100%;
+}
+
+#tile1Pic,
+#tile2Pic {
+  height: 100%;
 }
