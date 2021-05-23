@@ -22,6 +22,21 @@
   grid-area: second;
   opacity: 1;
 }
+#memoryTile3 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(116, 59, 59, 1);
+  grid-area: third;
+  opacity: 1;
+}
+
+#memoryTile4 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(116, 59, 59, 1);
+  grid-area: fourth;
+  opacity: 1;
+}
 
 img {
   opacity: 0;
