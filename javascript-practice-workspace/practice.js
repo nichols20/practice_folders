@@ -66,39 +66,31 @@ class Memory {
         }
         else if(this.match[0] !== this.match[1]){
             this.clickAmount = 0;
-            window.alert('try again :(')
+            alert('try again :(')
             if(this.match[0] === this.source){
                 this.tile.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic.style.opacity = '0'
-            }
-            if(this.match[0] === this.source2){
                 this.tile2.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic2.style.opacity = '0'
             }
             if(this.match[0] === this.source3){
                 this.tile3.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic3.style.opacity = '0'
-            }
-            if(this.match[0] === this.source4){
                 this.tile4.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic4.style.opacity = '0'
             }
             if(this.match[1] === this.source){
-            this.tile.style.backgroundColor = 'rgba(116, 59, 59, 1)'
+                console.log('this is being chosen')
+                this.tile.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic.style.opacity = '0'
-                this.match.splice(0, 2)
-            }
-            if(this.match[1] === this.source2){
                 this.tile2.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic2.style.opacity = '0'
                 this.match.splice(0, 2)
             }
             if(this.match[1] === this.source3){
+                console.log('this works')
                 this.tile3.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic3.style.opacity = '0'
-                this.match.splice(0, 2)
-            }
-            if(this.match[1] === this.source4){
                 this.tile4.style.backgroundColor = 'rgba(116, 59, 59, 1)'
                 this.tilePic4.style.opacity = '0'
                 this.match.splice(0, 2)
