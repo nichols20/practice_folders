@@ -17,7 +17,7 @@ class Memory {
         this.clickAmount = 0 /*once two clicks have occured the program will analyze whether the two images are the same*/
         this.countCorrect = 0         
         this.text = document.createElement('p')         
-        this.text.textContent = `Score: ${this.countCorrect}`        
+        this.text.innerHTML = `Score: ${this.countCorrect}`        
         document.body.append(this.text)
 
         this.tile1Clicked = function(){
@@ -68,7 +68,13 @@ class Memory {
             window.alert('nice job!')
             this.clickAmount = 0;
             this.countCorrect++
-            this.text.textContent = `Score: ${this.countCorrect}`
+            this.text.innerHTML = `Score: ${this.countCorrect}`
+
+            this.match.splice(0, 2)
+
+            if(this.match[0] === this.source){
+                this.tile.onclick = 'whatever'
+            }
         }
         else if(this.match[0] !== this.match[1]){
             this.clickAmount = 0;
