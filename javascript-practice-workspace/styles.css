@@ -1,4 +1,5 @@
 #memoryGame {
+  gap: 10px;
   display: grid;
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(2, 200px);
@@ -35,6 +36,22 @@
   height: 200px;
   background-color: rgba(116, 59, 59, 1);
   grid-area: fourth;
+  opacity: 1;
+}
+
+#memoryTile5 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(116, 59, 59, 1);
+  grid-area: fifth;
+  opacity: 1;
+}
+
+#memoryTile6 {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(116, 59, 59, 1);
+  grid-area: sixth;
   opacity: 1;
 }
 
