@@ -12,11 +12,9 @@
     function addEdge(from, to){
         if (graph[from] == null){
             graph[from] = [to];
-            console.log(graph[from])
         }
         else {
-            //graph[from].push(to)
-            //console.log(graph)
+            graph[from].push(to)
         }
     }
 
@@ -28,8 +26,37 @@
 } 
 
 
+class VillageState {
+    constructor(place, parcels ){
+        this.place = place
+        this.parcels = parcels 
+    }
+
+    move(destination){
+        console.log(destination)
+        if (!roadGraph[this.place].includes(destination)) {
+            return this
+        }
+        else{
+            let parcels = this.parcels.map(p => {
+                if (p.place != this.place) return p
+                return {place: destination, address: p.address};
+            }).filter(p => p.place != p.address)
+             return new VillageState(destination, parcels)
+        }
+    }
+}
 
 const roadGraph = buildGraph(roads)
+
+let first = new VillageState(
+    'post office',
+    [{place: 'post office', address: `Alice's House`}]
+)
+
+let next = first.move(`Alice's House`)
+
+
 
 
 
