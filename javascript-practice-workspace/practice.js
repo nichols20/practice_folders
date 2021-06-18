@@ -32,8 +32,9 @@ class VillageState {
         this.parcels = parcels 
     }
 
+    
+
     move(destination){
-        console.log(destination)
         if (!roadGraph[this.place].includes(destination)) {
             return this
         }
@@ -49,13 +50,11 @@ class VillageState {
 
 const roadGraph = buildGraph(roads)
 
-let first = new VillageState(
-    'post office',
-    [{place: 'post office', address: `Alice's House`}]
-)
+let first = new VillageState('Post Office', [{place: 'Post Office', address: `Alice's House`}], roadGraph )
 
 let next = first.move(`Alice's House`)
 
+console.log(next.place)
 
 
 
